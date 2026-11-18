@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="RoboticsClub Intro Python Lab — run Python in your browser, no install."
+    />
+    <title>RoboticsClub · Intro Python Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1F2A'/%3E%3Cpath d='M8 22V10h3.2l3.4 8.2L18 10H21v12h-2.4v-7.4L15.4 22h-2.2L10.4 14.6V22H8z' fill='%2300B4A0'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="brand">RoboticsClub</p>
+        <h1 class="product">Intro Python Lab</h1>
+      </div>
+      <div class="status-cluster">
+        <span id="engine-status" class="status" data-state="loading" role="status">
+          Loading Python…
+        </span>
+        <span class="hint-kbd" title="Run shortcut">Ctrl/Cmd + Enter</span>
+      </div>
+    </header>
+
+    <main class="lab">
+      <section class="lessons" aria-label="Starter lessons">
+        <p class="lessons-label">Starters</p>
+        <div id="lesson-list" class="lesson-list" role="list"></div>
+      </section>
+
+      <section class="workspace">
+        <div class="pane editor-pane">
+          <div class="pane-head">
+            <label for="code-editor">Code</label>
+            <div class="pane-actions">
+              <button type="button" id="btn-clear-output" class="ghost-btn">
+                Clear output
+              </button>
+              <button type="button" id="btn-run" class="run-btn" disabled>
+                <span class="run-icon" aria-hidden="true"></span>
+                Run
+              </button>
+            </div>
+          </div>
+          <textarea
+            id="code-editor"
+            class="code-editor"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off"
+            aria-label="Python code editor"
+          ></textarea>
+        </div>
+
+        <div class="pane console-pane">
+          <div class="pane-head">
+            <span>Console</span>
+          </div>
+          <pre id="console-out" class="console" tabindex="0" aria-live="polite"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>
+        Python runs in your browser (Pyodide). After the first load, Run works
+        even when external code runners are blocked.
+      </p>
+    </footer>
+
+    <script src="./lessons.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
